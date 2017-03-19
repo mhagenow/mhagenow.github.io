@@ -6,7 +6,7 @@
 <body>
 
 <!-- Navigation -->
-<nav class="w3-bar w3-orange">
+<nav class="w3-bar w3-gray">
   <a href="index.html" class="w3-button w3-bar-item">Home</a>
   <a href="index2.html" class="w3-button w3-bar-item">About Me</a>
   <a href="#projects" class="w3-button w3-bar-item">Projects</a>
@@ -16,7 +16,7 @@
 
 <!-- Slide Show -->
 <section>
-  <img class="mySlides" src="/imgs/pool.JPG"
+  <img class="mySlides" src="imgs/pool.JPG"
   style="width:100%">
 <img class="mySlides" src="imgs/pool2.JPG"
   style="width:100%">
@@ -36,7 +36,7 @@ function carousel() {
     myIndex++;
     if (myIndex > x.length) {myIndex = 1}
     x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 250);
+    setTimeout(carousel, 400);
 }
 </script>
 
