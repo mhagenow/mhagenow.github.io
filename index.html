@@ -1,51 +1,46 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-.city {
-    float: left;
-    margin: 5px;
-    padding: 15px;
-    max-width: 300px;
-    height: 300px;
-    border: 1px solid black;
-	background-color: #ffffff;
-} 
-
-body {
-	background-color:#b894ae;
-	}
-</style>
-</head>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
 <body>
 
-<h1>Mike's Page</h1>
+<!-- Navigation -->
+<nav class="w3-bar w3-orange">
+  <a href="index.html" class="w3-button w3-bar-item">Home</a>
+  <a href="index2.html" class="w3-button w3-bar-item">About Me</a>
+  <a href="#projects" class="w3-button w3-bar-item">Projects</a>
+  <a href="#contact" class="w3-button w3-bar-item">Contact</a>
+  <div class="w3-bar-item" style="align:right">Hageneaux</div>
+</nav>
 
-<div class="city">
-  <h2>Dringus</h2>
-  <p>Word Founder/Evangelist</p>
-  <p>It is a revolution. Started in late 2014, a growing population of the US fits the demographic.</p>
-  <p> <a href="Hagenow_Resume.pdf"> does this work?! </a> </p>
-</div>
+<!-- Slide Show -->
+<section>
+  <img class="mySlides" src="imgs/pool.jpg"
+  style="width:100%">
+  <img class="mySlides" src="imgs/pool2.jpg"
+  style="width:100%">
+</section>
 
-<div class="city">
-  <h2>Espresso</h2>
-  <p>The drink of the people</p> 
-  <p>A historically under-engineered science and art that tastes like liquid happiness.</p>
-</div>
+<script>
+var myIndex = 0;
+carousel();
 
-<div class="city">
-  <h2>Ukulele</h2>
-  <p>The guitar of zoomed-in images</p>
-  <p>The four-stringed wonder. The perfect combo of bright tones and the ability to knock-off pop songs.</p>
-</div>
-<div class="city">
-  <h2>_joeldangus</h2>
-  <p>coffee shop/bike shop/dog place/aerospace global leader</p>
-  <p>Specializing in a chill atmosphere for people to drink coffee with dogs and bikes, _joeldangus is the future. We also build 3-stage rockets. Look out for the IPO.</p>
-</div>
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+}
+</script>
+
+
+
 
 </body>
 </html>
-
