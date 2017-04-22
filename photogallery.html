@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.city {
+    float: left;
+    margin: 5px;
+    padding: 15px;
+    max-width: 300px;
+    height: 300px;
+    border: 1px solid black;
+	background-color: #ffffff;
+} 
+
+body {
+	background-color:#b894ae;
+	}
+</style>
+</head>
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<body>
+
+<!-- Navigation -->
+<nav class="w3-bar w3-blue">
+  <a href="index.html" class="w3-button w3-bar-item">Home</a>
+  <a href="index2.html" class="w3-button w3-bar-item">About Me</a>
+  <a href="#projects" class="w3-button w3-bar-item">Projects</a>
+  <a href="#contact" class="w3-button w3-bar-item">Contact</a>
+  <div class="w3-bar-item" style="align:right">Hageneaux</div>
+</nav>
+
+<h1>Mike's Page</h1>
+<!--
+<div class="city">
+  <h2>Dringus</h2>
+  <p>Word Founder/Evangelist</p>
+  <p>It is a revolution. Started in late 2014, a growing population of the US fits the demographic.</p>
+  <p> <a href="Hagenow_Resume.pdf"> does this work?! </a> </p>
+</div>
+
+<div class="city">
+  <h2>Espresso</h2>
+  <p>The drink of the people</p> 
+  <p>A historically under-engineered science and art that tastes like liquid happiness.</p>
+</div>
+
+<div class="city">
+  <h2>Ukulele</h2>
+  <p>The guitar of zoomed-in images</p>
+  <p>The four-stringed wonder. The perfect combo of bright tones and the ability to knock-off pop songs.</p>
+</div>
+<div class="city">
+  <h2>_joeldangus</h2>
+  <p>coffee shop/bike shop/dog place/aerospace global leader</p>
+  <p>Specializing in a chill atmosphere for people to drink coffee with dogs and bikes, _joeldangus is the future. We also build 3-stage rockets. Look out for the IPO.</p>
+</div>-->
+
+<div class="city">
+  <h2>test</h2>
+  <p>test2</p>
+  <p>test3</p>
+</div>
+
+<SCRIPT>
+function passWord() {
+var testV = 1;
+var pass1 = prompt('Please Enter Your Password',' ');
+while (testV < 3) {
+if (!pass1) 
+history.go(-1);
+if (pass1.toLowerCase() == "letmein") {
+window.open('protectpage.html');
+break;
+} 
+testV+=1;
+var pass1 = 
+prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
+}
+if (pass1.toLowerCase()!="password" & testV ==3) 
+history.go(-1);
+return " ";
+} 
+</SCRIPT>
+<CENTER>
+<FORM>
+<input type="button" value="Enter Protected Area" onClick="passWord()">
+</FORM>
+</CENTER>
+
+</body>
+</html>
+

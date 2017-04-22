@@ -3,6 +3,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <body>
 
 <!-- Navigation -->
@@ -16,28 +18,32 @@
 
 <!-- Slide Show -->
 <section>
-  <img class="mySlides" src="imgs/pool.JPG"
-  style="width:100%">
-<img class="mySlides" src="imgs/pool2.JPG"
-  style="width:100%">
+<div id="cycler">
+<img class="active" src="imgs/madisoncityscape.PNG" alt="My image" style="width:100%" />
+<img src="imgs/madisoncityscapelogo.PNG" alt="My image" style="width:100%"/>	
+</div>
 </section>
 
 
 <script>
-var myIndex = 0;
-carousel();
 
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}
-    x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 400);
+
+function pauseCycle() {
+    myVar = setTimeout(cycleImages, 500);
 }
+
+function cycleImages(){
+      
+	  var $active = $('#cycler .active');
+      var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+      $next.css('z-index',2);//move the next image up the pile
+      $active.fadeOut(4500,function(){//fade out the top image
+	  $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+          $next.css('z-index',3).addClass('active');//make the next image the top one
+      });
+    }
+
+pauseCycle();
 </script>
 
 
