@@ -7,32 +7,42 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <body>
 
-<!-- Navigation -->
-<!--<nav class="w3-bar w3-black">
-  <a href="index.html" class="w3-button w3-bar-item">Home</a>
-  <a href="index2.html" class="w3-button w3-bar-item">About Me</a>
-  <a href="#projects" class="w3-button w3-bar-item">Projects</a>
-  <a href="#contact" class="w3-button w3-bar-item">Contact</a>
-</nav>-->
+
 
 <!-- Slide Show -->
 <section>
+<div id="mikeflyer">
+	<img id="lilmike" src="imgs/mike1.png" alt="My image" style="max-width:30px;position:absolute;z-index:15;left:-30%;"/>
+</div>
 <div id="cycler">
 <img class="active" src="imgs/madisoncityscape.png" alt="My image" style="width:100%" />
-<img src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%"/>	
+<img src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%"/>
 </div>
+<img src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%;visibility:0;"/>
 </section>
+
+<!-- Navigation -->
+<nav id="navbar" class="w3-bar w3-black">
+  <a href="index.html" class="w3-button w3-bar-item">Home</a>
+  <a href="index2.html" class="w3-button w3-bar-item">Projects</a>
+  <a href="#projects" class="w3-button w3-bar-item">Resume</a>
+</nav>
+
+<!-- Band Members -->
+<div id="aboutme">
+    <img id="selfpic" src="imgs/selfpic.png" alt="Random Name" style="width:33.33%;">
+	<div id="bio">
+		<h2>Mike is pretty cool I guess.</h2>
+		<p> This is where the content will go </p>
+	</div>
+</div>
+
+<div id="footer"> Hello </div>
 
 
 <script>
-
-
-function pauseCycle() {
-    myVar = setTimeout(cycleImages, 500);
-}
-
 function cycleImages(){
-      
+      console.log("here")
 	  var $active = $('#cycler .active');
       var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
       $next.css('z-index',2);//move the next image up the pile
@@ -41,8 +51,32 @@ function cycleImages(){
           $next.css('z-index',3).addClass('active');//make the next image the top one
       });
     }
+	
+function makeMikeFly(){
+	
+	var xcoord=-10;
+	
+	interval= setInterval(function() {xcoord=flyer(xcoord);},10);
+}
 
-pauseCycle();
+function flyer(xcoord){
+	xcoord+=0.25;
+	var $flyer = $('#lilmike');
+	$flyer.css('left',xcoord+"%");
+	console.log(xcoord)
+	if(xcoord == 110)
+	{
+		clearInterval(interval);
+	}
+	return xcoord;
+}
+
+
+$(window).on('load', function(){
+ myVar = setTimeout(cycleImages, 500);
+ myVar2 = setTimeout(makeMikeFly, 5000);
+ 
+ });
 </script>
 
 
