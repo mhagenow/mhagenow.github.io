@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<body>
+
+
+
+<!-- Slide Show -->
+<section>
+<div id="cycler">
+<img class="active" src="imgs/madisoncityscape.png" alt="My image" style="width:100%" />
+<img src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%"/>
+</div>
+<img src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%;visibility:0;"/>
+</section>
+
+<!-- Navigation -->
+<nav id="navbar" class="w3-bar w3-black">
+  <a href="index.html" class="w3-button w3-bar-item">Home</a>
+  <a href="projects.html" class="w3-button w3-bar-item">Projects</a>
+  <a href="Hagenow_Resume.pdf" class="w3-button w3-bar-item">Resume</a>
+</nav>
+
+<!-- Project List -->
+<div id="project list">
+    <div id="espresso" style="padding-top:20px;padding-bottom:20px;background-color:#ddd;">
+		<img src="imgs/espresso.png" style="width:33.3%;margin-left:10px;"/>
+		<div id="desc" style="widgth:60.0%">
+			<h2>Espresso thermal redesign</h2>
+			<p>Senior Design project focused on budget thermal regulation for residential espresso maker.</p>
+			<p><a href="espresso.html">Link to more details</a></p>
+		</div>	
+	</div>
+	<div id="espresso" style="padding-top:20px;padding-bottom:20px;background-color:#ccc;">
+		<img src="imgs/pool.JPG" style="width:33.3%;margin-left:10px;"/>
+		<div id="desc" style="widgth:60.0%">
+			<h2>TBD Project 2</h2>
+			<p>TBD</p>
+			<p><a href="espresso.html">Link to more details</a></p>
+		</div>	
+	</div>
+</div>
+
+
+<script>
+function cycleImages(){
+      console.log("here")
+	  var $active = $('#cycler .active');
+      var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+      $next.css('z-index',2);//move the next image up the pile
+      $active.fadeOut(4500,function(){//fade out the top image
+	  $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+          $next.css('z-index',3).addClass('active');//make the next image the top one
+      });
+    }
+
+
+$(window).on('load', function(){
+ myVar = setTimeout(cycleImages, 500);
+ myVar2 = setTimeout(makeMikeFly, 5000);
+ 
+ });
+</script>
+
+
+
+
+</body>
+</html>
