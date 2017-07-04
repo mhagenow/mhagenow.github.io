@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="css/custom.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<body onresize="adjustResponsiveImages()">
+<body>
 
 
 
@@ -27,9 +27,7 @@
 
 <!-- Band Members -->
 <div id="aboutme">
-    <img id="selfpic" src="imgs/selfpic.png" alt="Random Name" style="max-width:300px;width:80%;">
-	<img id="selfpic2" src="imgs/selfpic2.png" alt="Random Name" style="max-width:300px;width:80%;">
-	<img id="selfpic3" src="imgs/selfpic.png" alt="Random Name" style="max-width:300px;width:80%;">
+    <img id="selfpic" src="imgs/selfpic.png" alt="Random Name" style="width:33.33%;">
 	<div id="bio">
 		<h2>Hi! I'm Mike.</h2>
 		<p> I am a hardworking business-minded engineer with experience in HealthCare IT,<br> Aviation, and DAQ. My main research interests lie in IOT, sustainable energy, and controls. </p>
@@ -54,36 +52,7 @@ function cycleImages(){
       });
     }
 
-function adjustResponsiveImages(){
-	var myscreenwid=$(window).width();
-	if (myscreenwid < 750) {
-		document.getElementById("selfpic2").style.visibility = "hidden";
-		document.getElementById("selfpic3").style.visibility = "hidden";
-		document.getElementById("selfpic2").style.height = "1px";
-		document.getElementById("selfpic3").style.height = "1px";
-		document.getElementById("selfpic2").style.margin = "0px";
-		document.getElementById("selfpic3").style.margin = "0px";
-	} else if (myscreenwid < 1150) {
-		document.getElementById("selfpic2").style.visibility = "visible";
-		document.getElementById("selfpic3").style.visibility = "hidden";
-		document.getElementById("selfpic2").style.height = "270.266px";
-		document.getElementById("selfpic3").style.height = "1px";
-		document.getElementById("selfpic2").style.margin = "30px";
-		document.getElementById("selfpic3").style.margin = "0px";
-	} else {
-		document.getElementById("selfpic2").style.visibility = "visible";
-		document.getElementById("selfpic3").style.visibility = "visible";
-		document.getElementById("selfpic2").style.height = "270.266px";
-		document.getElementById("selfpic3").style.height = "270.266px";
-		document.getElementById("selfpic2").style.margin = "30px";
-		document.getElementById("selfpic3").style.margin = "30px";
-	}
-}
-	
 
-
-$(window).resize=adjustResponsiveImages;	
-	
 $(window).on('load', function(){
  myVar = setTimeout(cycleImages, 500);
  myVar2 = setTimeout(makeMikeFly, 5000);
