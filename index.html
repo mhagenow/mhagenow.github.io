@@ -81,8 +81,7 @@ function adjustResponsiveImages(){
 }
 	
 
-
-$(window).resize=adjustResponsiveImages;	
+adjustResponsiveImages; //call immediately to make sure extra images aren't displayed on mobile devices	
 	
 $(window).on('load', function(){
  myVar = setTimeout(cycleImages, 500);
