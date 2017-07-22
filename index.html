@@ -29,7 +29,7 @@
 <div id="aboutme">
     <img id="selfpic" src="imgs/selfpic.png" alt="Random Name" style="max-width:300px;width:80%;">
 	<img id="selfpic2" src="imgs/selfpic2.png" alt="Random Name" style="max-width:300px;width:80%;">
-	<img id="selfpic3" src="imgs/selfpic.png" alt="Random Name" style="max-width:300px;width:80%;">
+	<img id="selfpic3" src="imgs/selfpic3.png" alt="Random Name" style="max-width:300px;width:80%;">
 	<div id="bio">
 		<h2>Hi! I'm Mike.</h2>
 		<p> I am a hardworking business-minded engineer with experience in HealthCare IT,<br> Aviation, and DAQ. My main research interests lie in IOT, sustainable energy, and controls. </p>
@@ -44,7 +44,6 @@
 
 <script>
 function cycleImages(){
-      console.log("here")
 	  var $active = $('#cycler .active');
       var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
       $next.css('z-index',2);//move the next image up the pile
@@ -79,14 +78,11 @@ function adjustResponsiveImages(){
 		document.getElementById("selfpic3").style.margin = "30px";
 	}
 }
-	
 
 adjustResponsiveImages(); //call immediately to make sure extra images aren't displayed on mobile devices	
 	
 $(window).on('load', function(){
  myVar = setTimeout(cycleImages, 500);
- myVar2 = setTimeout(makeMikeFly, 5000);
- 
  });
 </script>
 
