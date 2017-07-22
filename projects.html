@@ -39,10 +39,16 @@
 		<div id="desc" style="max-width:80%">
 			<h2>Espresso thermal redesign</h2>
 			<p>Senior Design project focused on budget thermal regulation for residential espresso maker. Designed theoretical finned boiler for optimized heat transfer. Prototyped high-power in-line preheater and PID controller, bringing the operating temperature drop-off of the machine from 19.6F to 4.5F (comparable to a high-end commercial machine). Recipient of the O'Leary Design Award for outstanding contribution in the area of design.</p>
-			<p><a href="espresso.html">Link to more details</a></p>
+			<!--<p><a href="espresso.html">Link to more details</a></p>-->
 		</div>
-		<div>
-			<img src="imgs/espresso.png" style="margin:10px;max-width:80%"/>
+		<div class="">
+			<img class="slideshow1" src="imgs/espresso.png" style="max-width:600px;display:none;">
+			<img class="slideshow1" src="imgs/espresso2.png" style="max-width:600px;display:none;">
+			<div style="margin-top:30px;">
+			<button class="w3-button w3-black" onclick="plusDivs(-1)">&#10094;</button>
+			<span id="JSpic1">1/2</span>
+			<button class="w3-button w3-black" onclick="plusDivs(1)">&#10095;</button>
+			</div>
 		</div>
 	</div>
 </div>
@@ -60,6 +66,24 @@ function cycleImages(){
       });
     }
 
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("slideshow1");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block"; 
+  document.getElementById("JSpic1").textContent=slideIndex+"/"+x.length; 
+}
 
 $(window).on('load', function(){
  myVar = setTimeout(cycleImages, 500);
