@@ -36,23 +36,9 @@
   <a href="Hagenow_CV-3-18.pdf" class="w3-button w3-bar-item">CV</a>
 </nav>
 
-<!-- Project List -->
-<div id="project list">
-    <div id="espresso" style="padding-top:10px;padding-bottom:20px;background-color:#ddd;">
-		<div id="desc" style="max-width:80%">
-			<h2>Ukulele</h2>
-			<p>Been playing for about 8 years. Mostly instrumental arrangements. Proud owner of a Ko'aloha concert and Kamaka tenor.</p>
-		</div>
-		<div style="margin-left:10px">
-			<iframe width="560px" width=100% height="315" src="https://www.youtube.com/embed/6FMulJY1VE0" frameborder="0" allowfullscreen></iframe>
-		</div>
-	</div>
-
-
 
 <script>
 function cycleImages(){
-      console.log("here")
 	  var $active = $('#cycler .active');
       var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
       $next.css('z-index',2);//move the next image up the pile
@@ -62,7 +48,6 @@ function cycleImages(){
       });
     }
 
-	
 function adjustResponsiveImages(){
 	var myscreenwid=$(window).width();
 	if (myscreenwid < 400) {
@@ -76,10 +61,8 @@ function adjustResponsiveImages(){
 
 adjustResponsiveImages(); //call immediately to make sure extra images aren't displayed on mobile devices	
 	
-
 $(window).on('load', function(){
  myVar = setTimeout(cycleImages, 500);
- 
  });
 </script>
 

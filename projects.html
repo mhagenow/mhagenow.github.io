@@ -13,17 +13,20 @@
 <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
 <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 
-<body>
+
+<body onresize="adjustResponsiveImages()">
 
 
 
 <!-- Slide Show -->
 <section>
 <div id="cycler">
-<img class="active" src="imgs/madisoncityscape.png" alt="My image" style="width:100%" />
-<img src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%"/>
+<img id="headerimg1" class="active" src="imgs/madisoncityscape.png" alt="My image" style="width:100%" />
+<img id="headerimg2" src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%"/>
+
 </div>
-<img src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%;visibility:0;"/>
+<img id="headerimg2" src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%;visibility:0;"/>
+
 </section>
 
 <!-- Navigation -->
@@ -36,8 +39,8 @@
 
 <!-- Project List -->
 <div id="project list">
-    <div id="espresso" style="padding-top:10px;padding-bottom:20px;background-color:#ddd;">
-		<div id="desc" style="max-width:80%">
+    <div id="espresso" style="padding-top:10px;padding-bottom:10px;background-color:#ddd;">
+		<div id="desc" style="max-width:95%">
 			<h2>Espresso thermal redesign</h2>
 			<p>Senior Design project focused on budget thermal regulation for residential espresso maker. Designed theoretical finned boiler for optimized heat transfer. Prototyped high-power in-line preheater and PID controller, bringing the operating temperature drop-off of the machine from 19.6F to 4.5F (comparable to a high-end commercial machine). Recipient of the O'Leary Design Award for outstanding contribution in the area of design.</p>
 			<p><a href="https://www.youtube.com/watch?v=w2tsvJtDwCQ">Video</a></p>
@@ -45,7 +48,7 @@
 		<div class="">
 			<img class="slideshow1" src="imgs/espresso.png" style="max-width:100%;display:none;">
 			<img class="slideshow1" src="imgs/espresso2.png" style="max-width:100%;display:none;">
-			<div style="margin-top:30px;">
+			<div style="margin-top:10px;">
 			<button class="w3-button w3-black" onclick="plusDivs(-1)">&#10094;</button>
 			<span id="JSpic1">1/2</span>
 			<button class="w3-button w3-black" onclick="plusDivs(1)">&#10095;</button>
@@ -53,15 +56,15 @@
 		</div>
 	</div>
 
-    <div id="hundo" style="padding-top:10px;padding-bottom:20px;background-color:#eee;">
-		<div id="desc" style="max-width:80%">
+    <div id="hundo" style="padding-top:10px;padding-bottom:10px;background-color:#eee;">
+		<div id="desc" style="max-width:95%">
 			<h2>SOAP Protocol over LAN</h2>
 			<p>Prototyped web service communication on LAN based on a raspberry pi invoking a service built on a separate machine. First built a SOAP Java web service in Eclipse EE that records request and uses File IO to store off a TXT log file. Stood up VM Apache Tomcat 8.5 to host service. Developed simple python listener in raspberry pi to look for button input and call SOAP service using suds-jurko.</p>
 		</div>
 		<div class="">
 			<img class="slideshow2" src="imgs/raspPiWS1.png" style="max-width:100%;display:none;">
 			<img class="slideshow2" src="imgs/raspPiWS2.PNG" style="max-width:100%;display:none;">
-			<div style="margin-top:30px;">
+			<div style="margin-top:10px;">
 			<button class="w3-button w3-black" onclick="plusDivs2(-1)">&#10094;</button>
 			<span id="JSpic2">1/2</span>
 			<button class="w3-button w3-black" onclick="plusDivs2(1)">&#10095;</button>
@@ -82,6 +85,20 @@ function cycleImages(){
           $next.css('z-index',3).addClass('active');//make the next image the top one
       });
     }
+	
+function adjustResponsiveImages(){
+	var myscreenwid=$(window).width();
+	if (myscreenwid < 400) {
+		document.getElementById("headerimg2").src = "imgs/madisoncityscapemobile.png";
+	}
+
+	else {
+		document.getElementById("headerimg2").src = "imgs/madisoncityscapelogo.png";
+	}
+}
+
+adjustResponsiveImages(); //call immediately to make sure extra images aren't displayed on mobile devices	
+
 
 var slideIndex = 1;
 showDivs(slideIndex);

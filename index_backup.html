@@ -13,6 +13,7 @@
 <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
 <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 
+
 <body onresize="adjustResponsiveImages()">
 
 
@@ -20,12 +21,10 @@
 <!-- Slide Show -->
 <section>
 <div id="cycler">
-<img id="headerimg1" class="active" src="imgs/madisoncityscape.png" alt="My image" style="width:100%" />
-<img id="headerimg2" src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%"/>
-
+<img class="active" src="imgs/madisoncityscape.png" alt="My image" style="width:100%" />
+<img src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%"/>
 </div>
-<img id="headerimg2" src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%;visibility:0;"/>
-
+<img src="imgs/madisoncityscapelogo.png" alt="My image" style="width:100%;visibility:0;"/>
 </section>
 
 <!-- Navigation -->
@@ -36,18 +35,14 @@
   <a href="Hagenow_CV-3-18.pdf" class="w3-button w3-bar-item">CV</a>
 </nav>
 
-
 <!-- Band Members -->
 <div id="aboutme">
     <img id="selfpic" src="imgs/selfpic.png" alt="Random Name" style="max-width:300px;width:80%;">
-	<span id="recent" style="position:fixed;padding-top:20px;padding-right:20px;"><p style="background-color:#eee;padding:5px;box-shadow: 10px 10px 5px #888888;">
-		Recent News:<br><br>
-		~Jan 2018 - Started in Reach Lab at UW-Madison<br><br>
-		~Dec 2017 - Admitted to PhD Program at UW-Madison<br><br>
-		~Sep 2017 Auditing classes in Controls and Power Conversion</p></span>
+	<img id="selfpic2" src="imgs/selfpic2.png" alt="Random Name" style="max-width:300px;width:80%;">
+	<img id="selfpic3" src="imgs/selfpic3.png" alt="Random Name" style="max-width:300px;width:80%;">
 	<div id="bio">
 		<h2>Hi! I'm Mike.</h2>
-		<p> I am a PhD student in Mechanical Engineering at UW-Madison.<br> My main research interests lie in controls, robotics, and IOT. </p>
+		<p> I am a business-savvy and highly technical engineer with experience in HealthCare IT,<br> Aviation, and DAQ. My main research interests lie in controls, robotics, and IOT. </p>
 		<p>If you have any questions or ideas, don't hesitate to reach out.</p>
 		<p>
 			<a href="mailto:michael.c.hagenow@gmail.com"><img id="email" src="imgs/envelope.png" style="padding:5px;"/></a>
@@ -70,18 +65,27 @@ function cycleImages(){
 
 function adjustResponsiveImages(){
 	var myscreenwid=$(window).width();
-	if (myscreenwid < 400) {
-		document.getElementById("headerimg2").src = "imgs/madisoncityscapemobile.png";
-
-		
-	}
-	
-	else if(myscreenwid < 700) {
-		document.getElementById("recent").style.display = "none";
-	}
-	else {
-		document.getElementById("headerimg2").src = "imgs/madisoncityscapelogo.png";
-		document.getElementById("recent").style.display = "inline";
+	if (myscreenwid < 750) {
+		document.getElementById("selfpic2").style.visibility = "hidden";
+		document.getElementById("selfpic3").style.visibility = "hidden";
+		document.getElementById("selfpic2").style.height = "1px";
+		document.getElementById("selfpic3").style.height = "1px";
+		document.getElementById("selfpic2").style.margin = "0px";
+		document.getElementById("selfpic3").style.margin = "0px";
+	} else if (myscreenwid < 1150) {
+		document.getElementById("selfpic2").style.visibility = "visible";
+		document.getElementById("selfpic3").style.visibility = "hidden";
+		document.getElementById("selfpic2").style.height = "270.266px";
+		document.getElementById("selfpic3").style.height = "1px";
+		document.getElementById("selfpic2").style.margin = "30px";
+		document.getElementById("selfpic3").style.margin = "0px";
+	} else {
+		document.getElementById("selfpic2").style.visibility = "visible";
+		document.getElementById("selfpic3").style.visibility = "visible";
+		document.getElementById("selfpic2").style.height = "270.266px";
+		document.getElementById("selfpic3").style.height = "270.266px";
+		document.getElementById("selfpic2").style.margin = "30px";
+		document.getElementById("selfpic3").style.margin = "30px";
 	}
 }
 
