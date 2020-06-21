@@ -48,7 +48,25 @@
 		</div>
 	</div>
 	
-	    <div id="espresso" style="padding-top:10px;padding-bottom:20px;background-color:#eee;">
+	<div id="espresso" style="padding-top:10px;padding-bottom:10px;background-color:#eee;">
+		<div id="desc" style="max-width:95%">
+			<h2>Ultimate Frisbee</h2>
+			<p>Been playing since 2009. Played in college nationals twice (2012, T-5 and 2014, T-9) with the <a href="http://www.tuftsmensultimate.org/">Tufts E-Men</a> and club nationals once (2015, T-9) with <a href="https://madisonultimate.blogspot.com/">
+Madison Club</a>.</p>
+		</div>
+		<div class="">
+			<img class="slideshow1" src="imgs/fsu_nationals.jpg" style="max-width:100%;display:none;">
+			<img class="slideshow1" src="imgs/oregon_stanford.jpg" style="max-width:100%;display:none;">
+			<img class="slideshow1" src="imgs/mad_club.jpg" style="max-width:100%;display:none;">
+			<div style="margin-top:10px;">
+			<button class="w3-button w3-black" onclick="plusDivs(-1)">&#10094;</button>
+			<span id="JSpic1">1/2</span>
+			<button class="w3-button w3-black" onclick="plusDivs(1)">&#10095;</button>
+			</div>
+		</div>
+	</div>
+	
+	    <div id="espresso" style="padding-top:10px;padding-bottom:20px;background-color:#ddd;">
 		<div id="desc" style="max-width:80%">
 			<h2>Espresso</h2>
 			<p>Trained by a <a href="https://www.youtube.com/watch?v=2mVZ8xVUD2k">US Barista champion</a>. Simonelli Oscar with a Rancilio Rocky. Roast a 60/40 Brazilian/Kenyan blend from <a href="https://burmancoffee.com/">Burman Coffee</a>. </p>
@@ -86,6 +104,24 @@ function adjustResponsiveImages(){
 
 adjustResponsiveImages(); //call immediately to make sure extra images aren't displayed on mobile devices	
 	
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("slideshow1");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block"; 
+  document.getElementById("JSpic1").textContent=slideIndex+"/"+x.length; 
+}
 
 $(window).on('load', function(){
  myVar = setTimeout(cycleImages, 500);
