@@ -7,7 +7,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 <head>
-	<title>Hageneaux - Projects</title>
+	<title>Hageneaux - Research</title>
 </head>
 
 <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
@@ -32,55 +32,35 @@
 <!-- Navigation -->
 <nav id="navbar" class="w3-bar w3-black">
   <a href="index.html" class="w3-button w3-bar-item">Home</a>
-  <a href="projects.html" class="w3-button w3-bar-item">Projects</a>
+  <a href="projects.html" class="w3-button w3-bar-item">Research</a>
   <a href="hobbies.html" class="w3-button w3-bar-item">Hobbies</a>
   <a href="Hagenow_CV-6-20.pdf" class="w3-button w3-bar-item">CV</a>
 </nav>
 
 <!-- Project List -->
 <div id="project list">
-    <div id="research" style="padding-top:10px;padding-bottom:10px;background-color:#eee;">
+    <div id="research" style="padding-top:10px;padding-bottom:10px;background-color:#ddd;">
 		<div id="desc" style="max-width:95%">
-			<h2>Doctoral Research</h2>
+			<h2>Current Research</h2>
 			<div style="max-width:800px;margin-left:10px">
 				<img class="sawyer_pic" src="imgs/mh_sawyer_med_res.png" style="max-width:400px">
 			</div>
 			
-			<p>My current doctoral research focuses on geometric constraint inference and telerobotic shared control. More detail can be found at <a href="https://robotics.wisc.edu/">Wisconsin Robotics</a>.
-			Some of my non-research related projects can be found below.</p>
+			<p>My current doctoral research focuses on geometric constraint inference and telerobotic shared control. More detail can be found at <a href="https://robotics.wisc.edu/">Wisconsin Robotics</a>.</p>
 		</div>
 		
 	</div>
-	<div id="espresso" style="padding-top:10px;padding-bottom:10px;background-color:#ddd;">
-		<div id="desc" style="max-width:95%">
-			<h2>Espresso thermal redesign</h2>
-			<p>Senior Design project focused on budget thermal regulation for residential espresso maker. Designed theoretical finned boiler for optimized heat transfer. Prototyped high-power in-line preheater and PID controller, bringing the operating temperature drop-off of the machine from 19.6F to 4.5F (comparable to a high-end commercial machine). Recipient of the O'Leary Design Award for outstanding contribution in the area of design.</p>
-			<p><a href="https://www.youtube.com/watch?v=w2tsvJtDwCQ">Video</a></p>
-		</div>
-		<div class="">
-			<img class="slideshow1" src="imgs/espresso.png" style="max-width:100%;display:none;">
-			<img class="slideshow1" src="imgs/espresso2.png" style="max-width:100%;display:none;">
-			<div style="margin-top:10px;">
-			<button class="w3-button w3-black" onclick="plusDivs(-1)">&#10094;</button>
-			<span id="JSpic1">1/2</span>
-			<button class="w3-button w3-black" onclick="plusDivs(1)">&#10095;</button>
-			</div>
-		</div>
-	</div>
-
     <div id="hundo" style="padding-top:10px;padding-bottom:10px;background-color:#eee;">
 		<div id="desc" style="max-width:95%">
-			<h2>SOAP Protocol over LAN</h2>
-			<p>Prototyped web service communication on LAN based on a raspberry pi invoking a service built on a separate machine. First built a SOAP Java web service in Eclipse EE that records request and uses File IO to store off a TXT log file. Stood up VM Apache Tomcat 8.5 to host service. Developed simple python listener in raspberry pi to look for button input and call SOAP service using suds-jurko.</p>
-		</div>
-		<div class="">
-			<img class="slideshow2" src="imgs/raspPiWS1.png" style="max-width:100%;display:none;">
-			<img class="slideshow2" src="imgs/raspPiWS2.PNG" style="max-width:100%;display:none;">
-			<div style="margin-top:10px;">
-			<button class="w3-button w3-black" onclick="plusDivs2(-1)">&#10094;</button>
-			<span id="JSpic2">1/2</span>
-			<button class="w3-button w3-black" onclick="plusDivs2(1)">&#10095;</button>
-			</div>
+			<h2>Publications</h2>
+			<h3>Journal Papers</h3>
+			<ul>
+				<li>Subramani, G., <b>Hagenow, M.</b>, Gleicher, M., and Zinn, M. Constraint inference using pose and wrench measurements.<i> IEEE Transactions on Robotics (TR-O). Submitted.</i></li>
+			</ul>
+			<h3>Conference Papers</h3>
+			<ul>
+				<li>W. Hu, Q. Fan, A. H. Nicholas, <b>M. C. Hagenow</b>, and A. T. Ohta. Bubble micro-manipulator for co-operative micro-manipulation.<i> 9th IEEE International Conference on Nano/Micro Engineered and Molecular Systems (IEEE-NEMS)</i>, Honolulu, HI, Apr. 2014.</li>
+			</ul>
 		</div>
 	</div>
 </div>
@@ -111,44 +91,6 @@ function adjustResponsiveImages(){
 
 adjustResponsiveImages(); //call immediately to make sure extra images aren't displayed on mobile devices	
 
-
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("slideshow1");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block"; 
-  document.getElementById("JSpic1").textContent=slideIndex+"/"+x.length; 
-}
-
-var slideIndex2 = 1;
-showDivs2(slideIndex2);
-
-function plusDivs2(n) {
-  showDivs2(slideIndex2 += n);
-}
-
-function showDivs2(n) {
-  var i;
-  var x = document.getElementsByClassName("slideshow2");
-  if (n > x.length) {slideIndex2 = 1}    
-  if (n < 1) {slideIndex2 = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex2-1].style.display = "block"; 
-  document.getElementById("JSpic2").textContent=slideIndex2+"/"+x.length; 
-}
 
 $(window).on('load', function(){
  myVar = setTimeout(cycleImages, 500);
