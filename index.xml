@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>About on Mike Hagenow</title>
-    <link>https://www.hageneaux.com/</link>
-    <description>Recent content in About on Mike Hagenow</description>
+    <title></title>
+    <link>https://raditian-hugo.radity.com/</link>
+    <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="https://www.hageneaux.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>About</title>
-      <link>https://www.hageneaux.com/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.hageneaux.com/about/</guid>
-      <description>About Me  I am a PhD student in Mechanical Engineering at UW-Madison. Currently, I am working on Effective Human-Robot Teaming to Advance Aviation Manufacturing as part of the NASA University Leadership Initiative (ULI). My main research interests lie in controls and robotics. Previously, I was a manager at Epic Systems working on patient portals. I received my BS in Mechanical Engineering from Tufts University in 2014 and my MS in Mechanical Engineering from UW-Madison in 2019.</description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>https://www.hageneaux.com/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.hageneaux.com/contact/</guid>
-      <description> If you have any questions or ideas, don&amp;rsquo;t hesitate to reach out.
- Email: mhagenow [at] wisc.edu Linkedin: Profile   Mailing Address  221B, Baker Street
-London
-United Kingdom
-  Social  Facebook Twitter Google+  </description>
-    </item>
-    
+    <language>en-us</language><atom:link href="https://raditian-hugo.radity.com/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
