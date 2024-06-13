@@ -64,8 +64,12 @@
 .icon-smile-fill:before { content: '\e80a'; } /* '' */
 .icon-twitter-line:before { content: '\e80b'; } /* '' */
 .icon-youtube-line:before { content: '\e80c'; } /* '' */
-.icon-quote:before { content: '\e80d'; } /* '' */
-.icon-quote-line:before { content: '\e80d'; } /* '' */
+.icon-quote:before {
+  content: url(../google-scholar.svg);
+  vertical-align: middle; } /* '' */
+.icon-quote-line:before {
+  content: url(../google-scholar.svg);
+  vertical-align: middle; } /* '' */
 .icon-mail-fill:before { content: '\e80e'; } /* '' */
 .icon-codepen-line:before { content: '\e80f'; } /* '' */
 .icon-facebook-line:before { content: '\e810'; } /* '' */
